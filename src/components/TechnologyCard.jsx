@@ -1,9 +1,9 @@
-function TechnologyCard({title, description, status}){
+function TechnologyCard(props){
     let statusContent; 
 
-    if(status === "completed"){
+    if(props.card.status === "completed"){
         statusContent = <p className="completed-status">Выполнено</p>;
-    } else if(status === "in-progress"){
+    } else if(props.card.status === "in-progress"){
         statusContent = <p className="in-progress-status">В процессе</p>;
     } else {
         statusContent = <p className="not-started-status">Не начато</p>;
@@ -12,10 +12,10 @@ function TechnologyCard({title, description, status}){
     return (
         <div className="technology-card">
             <div className="technology-card__title">
-                <h2>{title}</h2>
+                <h2>{props.card.title}</h2>
             </div>
             <div className="technology-card__content">
-                <p>{description}</p>
+                <p>{props.card.description}</p>
             </div>
             <div className="technology-card__status">
                 {statusContent}
