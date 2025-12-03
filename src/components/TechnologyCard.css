@@ -1,52 +1,66 @@
 
 
 .technology-card {
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     margin-top: 20px;
-    padding: 30px;
-    flex-direction: column;
-    display: flex;
+    padding: 15px;
     align-items: center;
-    padding: 10px;
-    background-color: #FEFCFF;
-    border: 3px solid #F3F3F3;
+    background-color: #F8F4EF;
+    border: 5px solid #ded6cd;
     border-radius: 20px;
     /* box-shadow:  0 2px 5px rgba(0,0,0,0.1); */
-    min-width: 350px;
+    max-width: 500px;
+    width: 100%;
 }
 
 .technology-card__title {
-    color: #15152E; 
+  text-align: center;
+    color: #26282e; 
 }
 
 .technology-card__content {
-    padding: 15px;
-    color: #30306E;
+  text-align: center;
+  color: #40434E;
+  align-items: center;
+  justify-content: center;
+}
+
+.technology-card__status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50px;
 }
 
 .completed-status {
   font-family: Helvetica;
-  border: 3px solid #E0FFC2;
-  border-radius: 2px;
+  background-color: #E0FFC2;
+  border: 3px solid #ccebae;
   padding: 10px;
   border-radius: 10px;
   font-weight: 700;
+  display: inline-block;
+  text-align: center;
 }
 
 .in-progress-status {
   font-family: Helvetica;
-  border: 3px solid #fff6c2;
+  background-color: #fff6c2;
+  border: 3px solid #ded5a2;
   border-radius: 2px;
   padding: 10px;
   border-radius: 10px;
   font-weight: 700;
+  display: inline-block;
 }
 
 .not-started-status {
   font-family: Helvetica;
-  border: 3px solid #ffc2c2;
+  background-color: #ffc2c2;
+  border: 3px solid #d9a1a1;
   border-radius: 2px;
   padding: 10px;
   border-radius: 10px;
   font-weight: 700;
+  display: inline-block;
 }
