@@ -1,24 +1,39 @@
-function TechnologyCard(props){
-    let statusContent; 
 
-    if(props.card.status === "completed"){
-        statusContent = <p className="completed-status">Выполнено</p>;
-    } else if(props.card.status === "in-progress"){
-        statusContent = <p className="in-progress-status">В процессе</p>;
-    } else {
-        statusContent = <p className="not-started-status">Не начато</p>;
+function TechnologyCard({cards, onStatusChange}){
+
+    const statuses = ['not-started', 'in-progress', 'completed']
+
+    const handleClick = () => {
+        const currentIdx = statuses.indexOf(cards.status);
+        const nextIdx = (currentIdx + 1) % statuses.length;
+        const newStatus = statuses[nextIdx];
+
+        onStatusChange(newStatus);
+    };
+
+
+    
+    const getStatusContent = (status) => {
+        if(status === "completed"){
+            return <p className="completed-status">Выполнено</p>;
+        } else if(status === "in-progress"){
+            return <p className="in-progress-status">В процессе</p>;
+        } else {
+            return <p className="not-started-status">Не начато</p>;
+        }
     }
+
 
     return (
         <div className="technology-card">
             <div className="technology-card__title">
-                <h2>{props.card.title}</h2>
+                <h2>{cards.title}</h2>
             </div>
             <div className="technology-card__content">
-                <p>{props.card.description}</p>
+                <p>{cards.description}</p>
             </div>
-            <div className="technology-card__status">
-                {statusContent}
+            <div onClick={handleClick} className="technology-card__status">
+                {getStatusContent(cards.status)}
             </div>
         </div>
     )

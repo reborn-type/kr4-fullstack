@@ -1,0 +1,76 @@
+.quick-actions__buttons {
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    min-width: 150px;
+    transition: 
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border 0.3s ease
+}
+
+
+.done-button {
+    min-height: 50px;
+    min-width: inherit;
+    display: inline-block;
+    margin: 15px;
+    padding: 15px;
+    color: #6082B6;
+    background-color: #F8F4EF;
+    border-radius: 10px;
+    font-family: inherit;
+    font-weight: inherit;
+    border: 2px solid #e6e1db;
+    transition: inherit;
+}
+
+.done-button:hover {
+    background-color:#dad4ce;
+    color:#4a6792;
+    border: 3px solid #afa89f;
+    cursor: pointer;
+}
+
+.clear-button {
+    min-height: 50px;
+    min-width: inherit;
+    display: inline-block;
+    margin: 15px;
+    padding: 15px;
+    color: #6082B6;
+    font-family: inherit;
+    font-weight: inherit;
+    border-radius: 10px;
+    background-color: #F8F4EF;
+    border: 2px solid #e6e1db;
+    transition: inherit;
+}
+
+.clear-button:hover {
+    background-color:#dad4ce;
+    color:#4a6792;
+    border: 3px solid #afa89f;
+    cursor: pointer;
+}
+
+.random-button {
+    min-height: 50px;
+    min-width: inherit;
+    display: inline-block;
+    padding: 15px;
+    margin: 15px;
+    color: #6082B6;
+    font-family: inherit;
+    font-weight: inherit;
+    border-radius: 10px;
+    background-color: #F8F4EF;
+    border: 2px solid #e6e1db;
+    transition: inherit;
+}
+
+.random-button:hover {
+    background-color:#dad4ce;
+    color:#4a6792;
+    border: 3px solid #afa89f;
+    cursor: pointer;
+}

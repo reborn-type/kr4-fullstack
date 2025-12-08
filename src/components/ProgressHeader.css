@@ -1,5 +1,13 @@
 .progress-header {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;        
+    font-family: Arial, Helvetica, sans-serif;                    
+}
+
+.progress-bar {
+    width: 100%;
     max-width: 400px;
     height: 25px;
     background-color: #6082B6;
@@ -12,8 +20,17 @@
     height: 100%;
     background-color: #F8F4EF;
     border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     transition: width 0.3s ease;
+}
+
+.progress-info {
+    width: 100%;
+    color: #F8F4EF;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+    margin-top: 15px;
+    gap: 15px;
+    font-weight: bold;
 }
