@@ -1,0 +1,44 @@
+import useLocalStorage from './useLocalStorage';
+
+const initialTechnologies = [
+    {id:1, title: "Сделать практику 1-19", description: "Сделать технологии карточек и добавить им стили", status: "completed", notes: 'Нужно чет сделать до завтра'},
+    {id:2, title: "Научиться использовать React свободно", description: "Разобраться в разновидности хуков и понять как все работает под капотом", status: "in-progress", notes: 'Что-то крутое'},
+    {id:3, title: "Изучение Vue", description: "Начат изучение Vue", status: "not-started", notes: 'полезная тема'},
+    {id:4, title: "Изучение Ts", description: "Начать изучение TypeScript", status: "not-started", notes: ''}
+]
+
+const useTechnologies = () => {
+
+    const [technologies, setTechnologies] = useLocalStorage("technologies", initialTechnologies)
+
+    const updateStatus = (techId, newStatus) => {
+        setTechnologies(prev => 
+            prev.map(tech => 
+                tech.id === techId ? {...tech, status: newStatus} : tech
+            )
+        )
+    }
+
+    const updateNotes = (techId, newNotes) => {
+        setTechnologies(prev => 
+            prev.map(tech => 
+                tech.id === techId ? {...tech, notes: newNotes} : tech
+            )
+        )
+    }
+
+    const calculateProgress = () => {
+        if(technologies.length === 0) return 0; 
+        const completed = technologies.filter(tech => tech.status === 'completed').length 
+        return Math.round((completed/technologies.length) * 100)
+    }
+
+    return {
+        technologies, 
+        updateStatus,
+        updateNotes, 
+        progress: calculateProgress()
+    };
+}
+
+export default useTechnologies;
