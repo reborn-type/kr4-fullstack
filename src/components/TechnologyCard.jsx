@@ -1,4 +1,5 @@
 
+
 function TechnologyCard({cards, onStatusChange}){
 
     const statuses = ['not-started', 'in-progress', 'completed']
